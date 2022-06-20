@@ -44,3 +44,5 @@ test_dataset = HAR(csv_file="./Dataset/Human Action Recognition/Testing_set.csv"
 batch_size = 100
 train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
 test_dl = DataLoader(test_dataset, batch_size)
+
+
