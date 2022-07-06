@@ -18,10 +18,10 @@ class HAR(Dataset):
         return len(self.df)
 
     def __getitem__(self, index):
-        image = Image.open(os.path.join(self.root_dir, self.df[index, "image"]))
-        label = self.class2index[self.df[index, "label"]]
+        image = Image.open(os.path.join(self.root_dir, self.df.iloc[index, 0]))
+        label = self.class2index[self.df.iloc[index, 1]]
 
         if self.transform:
             image = self.transform(image)
-    
+   
         return image, label
